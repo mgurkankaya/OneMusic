@@ -1,0 +1,40 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h5 class="card-title fw-semibold mb-4">Hakkımda Sayfası</h5>
+<table class="table table-secondary table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-center col-1">#</th>
+            <th class="col-7">Resim</th>
+            <th class="text-center col-2">Başlık</th>
+            <th class="text-center col-2">Açıklama</th>
+            <th class="text-center col-2">İşlemler</th>
+        </tr>
+    </thead>
+    <tbdoy>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th class="text-center bg-gradient-gray">@count</th>
+                <td><img style="height:75px; width:75px;" src="@item.ImageUrl" alt="Alternate Text" />  </td>
+                <td> @item.Title</td>
+                <td> @item.Description</td>
+                <td class="text-center ">
+                    <a asp-action="DeleteAbout" asp-route-id="@item.AboutId" class="btn btn-outline-danger"><i class="ti ti-trash"></i></a>
+                    <a asp-action="UpdateAbout" asp-route-id="@item.AboutId" class="btn btn-outline-danger"><i class="ti ti-edit"></i></a>
+
+                </td>
+            </tr>
+        }
+    </tbdoy>
+</table>
+<a asp-action="CreateAbout" class="btn btn-outline-danger"><i class="ti ti-plus mr-2"></i>Yeni</a>
+
+
+  
