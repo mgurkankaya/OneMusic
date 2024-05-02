@@ -1,0 +1,57 @@
+﻿@model List<Album>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h5 class="card-title fw-semibold mb-4">Albümler</h5>
+<table class="table table-secondary table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-center col-1">#</th>
+            <th class="col-2">Albüm Kapak URL</th>
+            <th class="text-center col-5">Albüm Adı</th>
+            <th class="text-center col-1">Fiyat</th>
+            <th class="text-center col-1">Şarkıcı</th>
+            <th class="text-center col-2">İşlemler</th>
+        </tr>
+    </thead>
+    <tbdoy>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th class="text-center bg-gradient-gray">@count</th>
+                <td><img style="height:75px; width:75px;" src="@item.CoverImage" alt="Alternate Text" />  </td>
+                <td> @item.AlbumName</td>
+                <td> @item.Price</td>
+                <td> @item.Singer.Name</td>
+                <td class="text-center ">
+                    <button class="btn btn-outline-danger" onclick="deleteAlbum(@item.AlbumId)"><i class="ti ti-trash"></i></button>
+                    <a asp-action="UpdateAlbum" asp-route-id="@item.AlbumId" class="btn btn-outline-danger"><i class="ti ti-edit"></i></a>
+                </td>
+            </tr>
+        }
+    </tbdoy>
+</table>
+<a asp-action="CreateAlbum" class="btn btn-outline-danger"><i class="ti ti-plus mr-2"></i>Yeni</a>
+
+<script>
+    function deleteAlbum(id) {
+        Swal.fire({
+            title: "Silmek istediğinize emin misiniz?",
+            text: "Bu işlem geri alınmayacak!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Evet, Sil!",
+            cancelButtonText: "İptal"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/AdminAlbum/DeleteAlbum/" + id
+            }
+        });
+    }
+</script>

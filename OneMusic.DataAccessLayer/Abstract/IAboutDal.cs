@@ -9,6 +9,7 @@ namespace OneMusic.DataAccessLayer.Abstract
 {
     public interface IAboutDal:IGenericDal<About>
     {
+       
 
     }
 }
