@@ -1,0 +1,28 @@
+﻿@model ArtistEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Artist/Views/ArtistLayout/Index.cshtml";
+}
+<h1>Profil Güncelleme</h1>
+<form method="post" class="form-group" enctype="multipart/form-data">
+    <label>Ad</label>
+    <input type="text" asp-for="Name" class="form-control mt-1"  required />
+    <label>Soyad</label>
+    <input type="text" asp-for="Surname" class="form-control mt-1"  required />
+    <label>Kullanıcı Adı</label>
+    <input type="text" asp-for="Username" class="form-control mt-1" required />
+    <label>Mail</label>
+    <input type="email" asp-for="Email" class="form-control mt-1"  required />
+    <label>Telefon</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control mt-1" />
+    <label>Görsel</label>
+    <input type="file" asp-for="ImageFile" class="form-control mt-1" required  />
+    <label>Mevcut Şifreniz</label>
+    <input type="password" asp-for="OldPassword" class="form-control mt-1" placeholder="Mevcut Şifreniz" required />
+    <label>Yeni Şifre Oluştur</label>
+    <input type="password" asp-for="NewPassword" class="form-control mt-1" placeholder="Yeni Şifreniz" />
+    <label>Şifre Tekrarla</label>
+    <input type="password" asp-for="ConfirmPassword" class="form-control mt-1" placeholder="Yeni Şifre Tekrarı" />
+    <p style="color:red !important">@Html.ValidationSummary()</p>
+    <button class="btn btn-outline-primary mt-1">Güncelle</button>
+</form>

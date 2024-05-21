@@ -24,11 +24,11 @@
             <th>@count</th>
             <td>  <img src="@item.CoverImage" style="height:75px;width:75px" />  </td>
             <td>@item.AlbumName</td>
-            <td>@item.Singer.Name</td>
+            <td>@item.AppUser.Name</td>
             <td>@item.Price ₺</td>
 
             <td>
-                <button class="btn btn-outline-danger" onclick="deleteAlbum(@item.AlbumId)">Sil</button>
+                <button class="btn btn-outline-danger" onclick="deleteMyAlbum(@item.AlbumId)">Sil</button>
                 <a class="btn btn-outline-info" asp-action="UpdateAlbum" asp-route-id="@item.AlbumId">Güncelle</a>
 
             </td>
@@ -43,7 +43,7 @@
 
 <script>
 
-    function deleteAlbum(id) {
+    function deleteMyAlbum(id) {
 
         Swal.fire({
             title: "Silmek istediğinize emin misiniz?",
@@ -57,7 +57,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
 
-                window.location.href = "/AdminAlbum/DeleteAlbum/" + id;
+                window.location.href = "/Artist/MyAlbum/DeleteAlbum/" + id;
 
             }
         });
