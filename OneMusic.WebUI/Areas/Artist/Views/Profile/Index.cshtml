@@ -5,6 +5,10 @@
 }
 <h1>Profil Güncelleme</h1>
 <form method="post" class="form-group" enctype="multipart/form-data">
+   
+    <div class="text-center">
+        <img src="@Model.ImageUrl" style="width:100px; height:80px;" />
+    </div>
     <label>Ad</label>
     <input type="text" asp-for="Name" class="form-control mt-1"  required />
     <label>Soyad</label>
@@ -15,8 +19,10 @@
     <input type="email" asp-for="Email" class="form-control mt-1"  required />
     <label>Telefon</label>
     <input type="text" asp-for="PhoneNumber" class="form-control mt-1" />
+  
+    <input type="hidden" asp-for="ImageUrl" class="form-control" />
     <label>Görsel</label>
-    <input type="file" asp-for="ImageFile" class="form-control mt-1" required  />
+    <input type="file"  asp-for="ImageFile" class="form-control mt-1"  />
     <label>Mevcut Şifreniz</label>
     <input type="password" asp-for="OldPassword" class="form-control mt-1" placeholder="Mevcut Şifreniz" required />
     <label>Yeni Şifre Oluştur</label>
