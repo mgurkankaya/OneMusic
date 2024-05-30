@@ -1,0 +1,39 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h1>Index</h1>
+
+<table class="table table-secondary table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-center col-1">#</th>
+            <th class="col-2">Name</th>
+            <th class="text-center col-2">E-Mail</th>
+            <th class="text-center col-2">Konu</th>
+            <th class="text-center col-2">İşlemler</th>
+        </tr>
+    </thead>
+    <tbdoy>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th class="text-center bg-gradient-gray">@count</th>
+                <td>
+                   @item.Name
+                </td>
+                <td> @item.Email</td>
+                <td> @item.Subject</td>
+                <td class="text-center ">
+                    <a asp-action="ReadMessage" asp-route-id="@item.MessageId" class="btn btn-outline-danger"><i class="ti ti-read"> Oku</i></a>
+
+                </td>
+
+            </tr>
+        }
+    </tbdoy>
+</table>

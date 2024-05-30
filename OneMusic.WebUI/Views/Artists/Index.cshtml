@@ -8,7 +8,9 @@
 <table class="table table-bordered table-hover">
     <tr>
         <th>#</th>
+        <th>Görsel</th>
         <th>Sanatçı Adı</th>
+        <th>Albümler</th>
         <th>İşlemler</th>
     </tr>  
     @foreach (var item in Model)
@@ -16,11 +18,18 @@
         count++;
         <tr>
             <th>@count</th>
+            <th>@item.ImageUrl</th>
             <td>@item.Name @item.Surname</td>
             <td>
                 <a href="/Artists/DeleteArtist/@item.Id" class="btn btn-outline-danger">Sil</a>
                 <a href="#" class="btn btn-outline-info">Albümleri Gör</a>
+            <td>
+               
+                
+
             </td>
+          
+            <td>@item.Name @item.Surname</td>
         </tr>
 
     }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc; 
 using OneMusic.BusinessLayer.Abstract;
 using OneMusic.EntityLayer.Entities;
+using OneMusic.BusinessLayer.Concrete;
 
 namespace OneMusic.WebUI.Areas.Artist.Controllers
 {
@@ -11,7 +12,7 @@ namespace OneMusic.WebUI.Areas.Artist.Controllers
     [Route("[area]/[controller]/[action]/{id?}")]
     public class MyAlbumController(IAlbumService _albumService,UserManager<AppUser> _userManager ) : Controller
     {
-       
+     
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
@@ -54,5 +55,9 @@ namespace OneMusic.WebUI.Areas.Artist.Controllers
             _albumService.TUpdate(album);
             return RedirectToAction("Index");
         }
+
+
+
+
     }
 }

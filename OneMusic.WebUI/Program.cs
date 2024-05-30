@@ -24,12 +24,16 @@ builder.Services.AddScoped<IAlbumService, AlbumManager>();
 builder.Services.AddScoped<IBannerDal, EfBannerDal>();
 builder.Services.AddScoped<IBannerService, BannerManager>();
 
-builder.Services.AddScoped<ISingerDal, EfSingerDal>();
-builder.Services.AddScoped<ISingerService, SingerManager>();
+builder.Services.AddScoped<ISongDal, EfSongDal>();
+builder.Services.AddScoped<ISongService, SongManager>();
+
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
 builder.Services.AddScoped<IMessageDal, EfMessageDal>();
 builder.Services.AddScoped<IMessageService, MessageManager>();
-builder.Services.AddValidatorsFromAssemblyContaining<SingerValidator>();
+
+
 
 builder.Services.AddDbContext<OneMusicContext>();
 
