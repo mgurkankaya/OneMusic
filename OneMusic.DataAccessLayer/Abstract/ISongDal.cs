@@ -9,9 +9,11 @@ namespace OneMusic.DataAccessLayer.Abstract
 {
     public interface ISongDal : IGenericDal<Song>
     {
-        List<Song> GetSongsWithAlbumAndArtist();
+        List<Song> GetSongsWithAlbumAndArtist(int id);
 
         List<Song> GetSongswithAlbumByUserId(int id);
+
+        List<Song> GetSongsWithAlbum();
 
     }
 }

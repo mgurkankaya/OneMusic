@@ -38,9 +38,14 @@ namespace OneMusic.BusinessLayer.Concrete
             return _songDal.GetList();
         }
 
-        public List<Song> TGetSongsWithAlbumAndArtist()
+        public List<Song> TGetSongsWithAlbum()
         {
-            return _songDal.GetSongsWithAlbumAndArtist();
+            return _songDal.GetSongsWithAlbum();
+        }
+
+        public List<Song> TGetSongsWithAlbumAndArtist(int id)
+        {
+            return _songDal.GetSongsWithAlbumAndArtist(id);
         }
 
         public List<Song> TGetSongswithAlbumByUserId(int id)

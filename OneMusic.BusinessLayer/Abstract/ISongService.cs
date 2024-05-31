@@ -10,8 +10,10 @@ namespace OneMusic.BusinessLayer.Abstract
     public interface ISongService : IGenericService<Song>
     {
 
-        public List<Song> TGetSongsWithAlbumAndArtist();
+        public List<Song> TGetSongsWithAlbumAndArtist(int id);
 
         public List<Song> TGetSongswithAlbumByUserId(int id);
+
+        List<Song> TGetSongsWithAlbum();
     }
 }

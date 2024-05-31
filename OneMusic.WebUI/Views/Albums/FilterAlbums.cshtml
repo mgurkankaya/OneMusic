@@ -1,17 +1,19 @@
 ﻿﻿<form method="post" asp-action="FilterAlbums" asp-controller="Albums">
-    <div class="row col-12">
-        <div class="form-group col-3">
-            <select asp-items="@ViewBag.artists" name="artist">
-                <option>Sanatçı Seçin</option>
+    <div class="dropdown col-12">
+    <div class="row ">
+        <div class="col-5 ">
+            <select asp-items="@ViewBag.artists" name="artist" Width="100%" class="dropdown-item">
+                <option>Sanatçı Seç</option>
             </select>
         </div>
-        <div class="form-group col-3">
-            <select asp-items="@ViewBag.categories" name="category">
-                <option>Tür Seçin</option>
+        <div class="col-5">
+            <select asp-items="@ViewBag.categories" name="category" Width="100%" class="dropdown-item">
+                <option>Tür Seç</option>
             </select>
         </div>
-        <div class="form-group col-3">
-            <button class="btn btn-sm">Ara</button>
+        <div class="col-2">
+                <button class="btn-sm btn-primary ">Ara</button>
         </div>
+    </div>
     </div>
 </form>
