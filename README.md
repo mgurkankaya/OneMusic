@@ -8,7 +8,7 @@ Kullanıcılar, sanatçıların şarkılarını dinleyebilmekte ve !filtreleme �
 
 Admin, site üzerindeki bütün CRUD yetkisine sahiptir.
 
-Linkedin profilim için [tıklayın]([https://pages.github.com/](https://www.linkedin.com/in/m-gürkan-kaya-267462273/)).
+Linkedin profilim için ([tıklayın](https://www.linkedin.com/in/m-gürkan-kaya-267462273/))
 
 ## Kullanılan Teknolojiler
 → **Asp.Net Core 8.0**</br>
