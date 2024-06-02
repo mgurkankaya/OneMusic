@@ -26,7 +26,7 @@
                 <td><img style="height:75px; width:75px;" src="@item.CoverImage" alt="Alternate Text" />  </td>
                 <td> @item.AlbumName</td>
                 <td> @item.Price</td>
-                <td> @item.AppUserId</td>
+                <td> @item.AppUser.Name</td>
                 <td class="text-center ">
                     <button class="btn btn-outline-danger" onclick="deleteAlbum(@item.AlbumId)"><i class="ti ti-trash"></i></button>
                     <a asp-action="UpdateAlbum" asp-route-id="@item.AlbumId" class="btn btn-outline-danger"><i class="ti ti-edit"></i></a>

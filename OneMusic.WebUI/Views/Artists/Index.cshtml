@@ -21,15 +21,14 @@
             <th>@item.ImageUrl</th>
             <td>@item.Name @item.Surname</td>
             <td>
-                <a href="/Artists/DeleteArtist/@item.Id" class="btn btn-outline-danger">Sil</a>
-                <a href="#" class="btn btn-outline-info">Albümleri Gör</a>
-            <td>
-               
-                
+                <a target="_blank" href="/Albums/Index/@item.Id" class="btn btn-outline-info">Albümleri Gör</a>
 
             </td>
-          
-            <td>@item.Name @item.Surname</td>
+
+
+
+
+            <td>   <a href="/Artists/DeleteArtist/@item.Id" class="btn btn-outline-danger">Sil</a>   </td>
         </tr>
 
     }

@@ -5,10 +5,10 @@ using OneMusic.EntityLayer.Entities;
 
 namespace OneMusic.WebUI.Controllers
 {
-  
+    [AllowAnonymous]
     public class DefaultController(IMessageService _messageService) : Controller
     {
-        [AllowAnonymous]
+        
         public IActionResult Index()
         {
             return View();

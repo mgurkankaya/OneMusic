@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url(/one-music/img/bg-img/breadcumb.jpg);">
+    <div class="bradcumbContent">
+        <p>Bize ulaşın.</p>
+        <h2>İLETİŞİM</h2>
+    </div>
+</section>
+@await Component.InvokeAsync("_DefaultContactInfoComponent")
+@await Component.InvokeAsync("_DefaultContactComponent")

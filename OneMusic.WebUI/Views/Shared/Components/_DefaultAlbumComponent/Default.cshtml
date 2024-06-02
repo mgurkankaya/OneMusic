@@ -24,7 +24,7 @@
                     @foreach (var item in Model)
                     {
                     <div class="single-album">
-                        <img src="@item.CoverImage" alt="">
+                            <img src="@item.CoverImage" style="width:190px !important; height:190px !important; " alt="">
                         <div class="album-info">
                             <a href="/Song/Index/@item.AlbumId">
                                     <h5>@item.AppUser.Name @item.AppUser.Surname</h5>
